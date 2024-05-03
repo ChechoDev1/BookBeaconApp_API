@@ -22,7 +22,7 @@ def recomendaciones(uid):
     # Llamar a la función recomendar_libros con los géneros y autores favoritos
     libros_recomendados = codigo.recomendar_libros(generos_favoritos, autores_favoritos)
     
-    return libros_recomendados.to_json()  # Devolver los resultados como JSON
+    return libros_recomendados.to_dict('records')  # Devolver los resultados como JSON
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=int(os.environ.get('PORT', 5000)),debug=False)
