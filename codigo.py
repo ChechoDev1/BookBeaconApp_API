@@ -48,7 +48,7 @@ def recomendar_libros(uid):
     vector_usuario = vectorizer.transform([texto_usuario])
     
     # Encontrar los vecinos más cercanos
-    distancias, indices = model_knn.kneighbors(vector_usuario, n_neighbors=30)
+    distancias, indices = model_knn.kneighbors(vector_usuario, n_neighbors=100)
     
     # Recuperar los libros recomendados
     libros_recomendados = df.iloc[indices.flatten()]
